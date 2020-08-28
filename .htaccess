@@ -1,0 +1,79 @@
+AddType text/x-component .htc
+
+RewriteEngine On
+# localhost
+ RewriteBase /njss/
+# live
+# RewriteBase /
+
+
+
+
+RewriteRule ^contact-us index.php?action=contact-us [L]
+
+RewriteRule ^tariffrate/([0-9]+)-([0-9]+)$ index.php?action=tariffrate&setLimit=$1&page=$2 [L]
+RewriteRule ^tariffrate/([0-9]+)$ index.php?action=tariffrate&setLimit=$1 [L]
+RewriteRule ^cart/remove/([0-9]+)$ index.php?action=cart&removeId=$1 [L]
+RewriteRule ^cart/([0-9]+)$ index.php?action=cart&productId=$1 [L]
+RewriteRule ^cart index.php?action=cart [L]
+
+RewriteRule ^checkout index.php?action=check_out [L]
+RewriteRule ^signup index.php?action=sign_up [L]
+RewriteRule ^prelogin index.php?action=pre_login [L]
+RewriteRule ^makelogin index.php?action=make_log_in [L]
+RewriteRule ^forgotpassword index.php?action=forgot_password [L]
+RewriteRule ^home index.php?pageId=56 [L]
+RewriteRule ^donate index.php?action=donate [L]
+RewriteRule ^apply index.php?action=apply [L]
+
+RewriteRule ^downloads index.php?action=downloads [L]
+
+RewriteRule ^quotation.html index.php?action=quotation [L]
+
+RewriteRule ^category index.php?action=products [L]
+RewriteRule ^products index.php?action=products [L]
+
+RewriteRule ^forex index.php?action=forex [L]
+RewriteRule ^tariffrate index.php?action=tariffrate [L]
+
+RewriteRule ^tracking index.php?action=tracking [L]
+
+RewriteRule ^track index.php?action=track [L]
+
+RewriteRule ^contact-us/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=contact-us&$1=$2 [L]
+
+ 
+# fro PRODUCTLIST
+RewriteRule ^productlist/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=productlist&$1=$2 [L]
+RewriteRule ^productlist index.php?action=productlist [L]
+
+# fro TESTIMONIALS
+RewriteRule ^testimonials-([-A-Za-z]+)-([-A-Za-z0-9]+)$ index.php?name=test&id=$2&action=test_page [L]
+RewriteRule ^members-([-A-Za-z]+)-([-A-Za-z0-9]+)$ index.php?name=test&id=$2&action=test_page [L]
+
+# fro TESTIMONIALS and FEEDBACK
+RewriteRule ^testimonials/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=testimonials&$1=$2 [L]
+RewriteRule ^testimonials index.php?action=testimonials [L]
+
+# fro TESTIMONIALS and FEEDBACK
+RewriteRule ^njsss-members/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=members&$1=$2 [L]
+RewriteRule ^njsss-members index.php?action=members [L]
+
+
+RewriteRule ^feedback/([-A-Za-z]+)/([-A-Za-z0-9]+)$ index.php?action=feedback&$1=$2 [L]
+RewriteRule ^feedback index.php?action=feedback [L]
+
+RewriteRule ^affiliation.html index.php?action=affiliation [L]
+
+RewriteRule ^air-cargo-tariff-rate index.php?action=tariff [L]
+
+
+RewriteRule ^([-A-Za-z0-9]+)/page/([0-9]+)$ index.php?query=$1&page=$2 [L]
+RewriteRule ^([-A-Za-z0-9])+$ index.php?query=$0 [L]
+#RewriteRule index.html$ index.php [L]
+
+#RewriteRule ^gallery/([0-9]+)\.html$ index.php?galleryId=$1 [L]
+#RewriteRule ^testimonials/([-A-Za-z0-9]+)\.html$ index.php?action=testimonials&$1 [L]
+#RewriteRule ^search/([-A-Za-z0-9]+)/([0-9])\.html$ index.php?action=search&keyword=$1&page=$2 [L]
+#RewriteRule ^([-A-Za-z0-9]+)/([-A-Za-z0-9]+)\.html$ index.php?action=$1&title=$2 [L]
+#RewriteRule ^([-A-Za-z0-9]+)\.html$ index.php?title=$1 [L]
